@@ -4,6 +4,8 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
+package 'docker'
+
 docker_service 'default' do
   action [:create, :start]
 end
