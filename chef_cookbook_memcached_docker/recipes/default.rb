@@ -17,7 +17,7 @@ docker_container 'memcached_server' do
   action :run_if_missing
   repo 'bitnami/memcached'
   tag '1.5.9-debian-9'
-  port "11211:11211"
+  network_mode 'host'
   env ["MEMCACHED_CACHE_SIZE=#{node['memcached']['memory']}",
        "MEMCACHED_USERNAME=#{node['memcached']['sasl_user_name']}",
        "MEMCACHED_PASSWORD=#{node['memcached']['sasl_user_password']}"]
